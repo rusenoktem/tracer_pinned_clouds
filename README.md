@@ -19,3 +19,6 @@ This script generates Figure 4 using the algorithm explained in Section 3.c. The
 
 make_fig5.py and make_fig5.py: 
 The two scripts use PCPCP data that we generated using a modified version of the PCCP code. The data for each of the 14 days listed in Table 1 are placed under the Data folder. 
+
+make_fig7.m: 
+This script uses cloud point data separately generated to track picked cloud points on June 22, 2022 pinned cloud case.  
