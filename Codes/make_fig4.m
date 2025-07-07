@@ -1,4 +1,3 @@
-make_fig4.m
 function dKE = make_fig4(beta,sonde_path)
 % dKE calculates 
 %
