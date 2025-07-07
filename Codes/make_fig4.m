@@ -1,3 +1,4 @@
+make_fig4.m
 function dKE = make_fig4(beta,sonde_path)
 % dKE calculates 
 %
@@ -26,7 +27,6 @@ cpa   = 1006;       % J/kg/K
 load ../Data/tracer_cloud_classes.mat 
 N = size(tracer_cloud_classes.date,1);
 
-wo_non_neg = ones(N,3)*nan;
 %calculate smallest non-negative w(zo), z>= zo and z <= zLCL
 for j = 1:N,
     %read sonde for the corresponding date
@@ -49,11 +49,10 @@ for j = 1:N,
     %find the height index for zLCL 
     ze = find(abs(sonde.alt-zLCL) == min(abs(sonde.alt-zLCL))); ze = ze(end);
     
-    wo_non_neg(j,:) = calc_wo_non_neg(sonde,z0,ze,beta); %[ w(z0) w(LCL) zLCL] 
     [rv(j),fv(j)] = root_solve(sonde,z0,ze,beta);
 end
 
-dKE = .5*(wo_non_neg(:,2).^2-wo_non_neg(:,1).^2);
+dKE = .5*(fv.^2-(rv).^2);
 plot_hist(dKE,tracer_cloud_classes);
 end
 
