@@ -22,3 +22,17 @@ The two scripts use PCPCP data that we generated using a modified version of the
 
 make_fig7.m: 
 This script uses cloud point data separately generated to track picked cloud points on June 22, 2022 pinned cloud case.  
+
+PCPCP data structure:
+PCPCP data is stored in mat files using two variables: 1) tmI for time index and 2) data for pixel and (east,north,up) positions. 
+tmI:   Nx1 array of time in seconds, starting from midnight (UTC) for the associated day.
+data: Nx7 array. Each row corresponds to a cloud point and the columns 1-7 refer to
+ 1. horizontal pixel position starting from the left corner of the cama image
+ 2. vertical pixel position starting from the top corner of the cama image
+ 3. horizontal pixel position starting from the left corner of the camb image
+ 4. vertical pixel position starting from the top corner of the camb image
+ 5. distance from the base point (AMF M1 site) to East in m
+ 6. distance from the base point to North in m
+ 7. height from the ground of the base point in m
+of each cloud point.
+ 
