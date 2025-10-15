@@ -36,3 +36,5 @@ data: Nx7 array. Each row corresponds to a cloud point and the columns 1-7 refer
  7. height from the ground of the base point in m
 of each cloud point.
  
+show_tracked_pts.py:
+This script displays tracked points in Figures 6 and 7 by overlaying them over the associated picture from camera A. The pictures are stored under Data/Pics_Figs_6_7 folder. Data including pixel positions, time, and 3D coordinates are stored in track20220622.mat and track20220513.mat files under Data folder. Some pictures may be missing because of storage space constraint. Those images can be do wnloaded from ARM archive.
